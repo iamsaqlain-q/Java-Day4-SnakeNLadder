@@ -6,30 +6,41 @@ public class SnakeNLadder {
 	int positionUC2 = (int) ((Math.random() * 6) + 1);
 	
 	void diceRolled() {
+		    positionUC2 = positionUC1 + positionUC2;
 			System.out.println("Die Rolls, Position : On Square "+ positionUC2);
 		}
 	void optionCheck() {
 		int  positionUC3 = (int) ((Math.random() * 6) + 1);
 		int checkOption = (int) (Math.random() * 3);
-		
-		
+		      
 	switch(checkOption) {
 	
 	case 0 : System.out.println("No Play!...same position");
 			 break;
 	case 1 : System.out.println("Yayyy...you climbed a ladder");
-			 positionUC1 = positionUC2 + positionUC3;
-	         System.out.println("Position : On Square " + positionUC1 );
+			 positionUC3 = positionUC2 + positionUC3;
+	         System.out.println("Position : On Square " + positionUC3 );
 			 break;
 	case 2 : System.out.println("Oops...snake there");
-			 positionUC1 = positionUC2 - positionUC3;
-	         if (positionUC1 <= 0)
-	        	 positionUC1 = 1;
-	         System.out.println("Position : On Square " + positionUC1);
+			 positionUC3 = positionUC2 - positionUC3;
+	         if (positionUC3 <= 0)
+	        	 positionUC3 = 1;
+	         System.out.println("Position : On Square " + positionUC3);
 	         break;
 			}
 		}
 	
+ void tillHundred() {
+	 int positionUC4 = (int) ((Math.random() * 6) + 1);
+	 do {
+		 positionUC4 = positionUC4 + positionUC4; 
+	 }
+	 while(positionUC4 < 99);
+	 if(positionUC4 >= 100)
+		 System.out.println("Congrates you reached On Square : 100");
+	 
+}
+ 		
 public static void main(String args[]) {
 		
 		
@@ -46,5 +57,9 @@ public static void main(String args[]) {
 //UC3
 		SnakeNLadder opt = new SnakeNLadder();
 		opt.optionCheck();
+//UC4
+		SnakeNLadder tillH = new SnakeNLadder();
+		tillH.tillHundred();
 	}
+
 }
