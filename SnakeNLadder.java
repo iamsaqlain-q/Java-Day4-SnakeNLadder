@@ -39,7 +39,6 @@ public class SnakeNLadder {
 	 if(positionUC4 >= 100)
 		 System.out.println("Congrates you reached On Square : 100");
  }
-//	     System.out.println("Dice thrown " + (count+1) + " numbers of time to reach 100");
  
  void exactHundred() {
 	 int positionUC5 = 1;
@@ -70,7 +69,7 @@ public static void main(String args[]) {
 //UC4
 		SnakeNLadder tillH = new SnakeNLadder();
 		tillH.tillHundred();
-		
+//UC5	
 		SnakeNLadder exactH = new SnakeNLadder();
 		exactH.exactHundred();
 	}
