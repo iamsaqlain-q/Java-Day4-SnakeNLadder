@@ -5,6 +5,34 @@ public class SnakeNLadder {
 	static int positionUC1 = 1;
 	int positionUC2 = (int) ((Math.random() * 6) + 1);
 	
+public static void main(String args[]) {
+		
+		
+		System.out.println("Snake And Ladder Simulator");
+		
+		byte player = 1;
+//UC1
+		System.out.println("Game Starts...");
+		System.out.println("Number of Players " + player);
+		System.out.println("Initial Position : On Square [" + positionUC1 + "]");
+//UC2	
+		SnakeNLadder dice = new SnakeNLadder();
+		dice.diceRolled();
+//UC3
+		SnakeNLadder opt = new SnakeNLadder();
+		opt.optionCheck();
+//UC4
+		SnakeNLadder tillH = new SnakeNLadder();
+		tillH.tillHundred();
+//UC5		
+		SnakeNLadder exactH = new SnakeNLadder();
+		exactH.exactHundred();
+//UC6
+		SnakeNLadder countd = new SnakeNLadder();
+		countd.countDiceNum();
+	}
+
+	
 	void diceRolled() {
 		    positionUC2 = positionUC1 + positionUC2;
 			System.out.println("Die Rolls, Position : On Square[" + positionUC2 + "]");
@@ -34,12 +62,11 @@ public class SnakeNLadder {
 	 int positionUC4 = (int) ((Math.random() * 6) + 1);
 	 do {
 		 positionUC4 = positionUC4 + positionUC4; 
-		 System.out.println("Position : On Square [" + positionUC4 + "]");
+//		 System.out.println("Position : On Square [" + positionUC4 + "]");
 	 }while(positionUC4 < 99);
 	 if(positionUC4 >= 100)
 		 System.out.println("Congrates you reached On Square : 100");
  }
-//	     System.out.println("Dice thrown " + (count+1) + " numbers of time to reach 100");
  
  void exactHundred() {
 	 int positionUC5 = 1;
@@ -50,29 +77,16 @@ public class SnakeNLadder {
 	 if(positionUC5 == 100)
 		 System.out.println("Congrates player one has won :)");
  }
- 		
-public static void main(String args[]) {
-		
-		
-		System.out.println("Snake And Ladder Simulator");
-		
-		byte player = 1;
-//UC1
-		System.out.println("Game Starts...");
-		System.out.println("Number of Players " + player);
-		System.out.println("Initial Position : On Square [" + positionUC1 + "]");
-//UC2	
-		SnakeNLadder dice = new SnakeNLadder();
-		dice.diceRolled();
-//UC3
-		SnakeNLadder opt = new SnakeNLadder();
-		opt.optionCheck();
-//UC4
-		SnakeNLadder tillH = new SnakeNLadder();
-		tillH.tillHundred();
-		
-		SnakeNLadder exactH = new SnakeNLadder();
-		exactH.exactHundred();
-	}
-
+ 
+ void countDiceNum() {
+	 int positionUC6 = (int) ((Math.random() * 6) + 1);
+	 int count = 1;
+	 while(positionUC6 <= 100) {
+		 
+		 positionUC6 = positionUC6 + positionUC6;  
+//		 System.out.println("Position : On Square [" + positionUC6 + "]");
+		 count++;
+	      }
+	 System.out.println("Dice thrown " + (count+1) + " numbers of time to reach 100");
+	 }
 }
