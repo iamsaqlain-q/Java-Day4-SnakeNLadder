@@ -1,15 +1,18 @@
 package com.bl.snakenladder;
 
+import java.util.Scanner;
+
 public class SnakeNLadder {
 	
 	static int positionUC1 = 1;
 	int positionUC2 = (int) ((Math.random() * 6) + 1);
+	static String player1name;
+	static String player2name;
+	
 	
 public static void main(String args[]) {
 		
-		
 		System.out.println("Snake And Ladder Simulator");
-		
 		byte player = 1;
 //UC1
 		System.out.println("Game Starts...");
@@ -30,9 +33,18 @@ public static void main(String args[]) {
 //UC6
 		SnakeNLadder countd = new SnakeNLadder();
 		countd.countDiceNum();
+//UC7
+    	Scanner sc = new Scanner(System.in);
+    	
+    	System.out.print("Enter the name of Player 1 : ");
+		player1name = sc.next();
+		System.out.print("Enter the name of Player 2 : ");
+		player2name = sc.next();
+	    System.out.println("\nInitial position of " + player1name + " & " + player2name + " is Square [1]\n");
+	    playerOne();
+	    sc.close();
 	}
 
-	
 	void diceRolled() {
 		    positionUC2 = positionUC1 + positionUC2;
 			System.out.println("Die Rolls, Position : On Square[" + positionUC2 + "]");
@@ -84,9 +96,39 @@ public static void main(String args[]) {
 	 while(positionUC6 <= 100) {
 		 
 		 positionUC6 = positionUC6 + positionUC6;  
-//		 System.out.println("Position : On Square [" + positionUC6 + "]");
 		 count++;
 	      }
 	 System.out.println("Dice thrown " + (count+1) + " numbers of time to reach 100");
 	 }
+ 
+static void playerOne(){
+	
+	String name = player1name;
+	int positionUC7 = (int) ((Math.random() * 6) + 1);
+	for(int i = 0; positionUC7 < 100 ; i++)
+	{
+		int newposition = (int) ((Math.random() * 6) + 1); 
+		if(positionUC7 + newposition <= 100)
+		{
+			positionUC7 = positionUC7 + newposition;
+		}
+	}
+	
+	String name2 = player2name;
+	int positionUC8 = (int) ((Math.random() * 6) + 1);
+	for(int i = 0; positionUC8 < 100 ; i++)
+	{
+		int newposition = (int) ((Math.random() * 6) + 1); 
+		if(positionUC8 + newposition <= 100)
+		{
+			positionUC8 = positionUC8 + newposition;
+		}
+	}
+	if(positionUC7 > positionUC8)
+		System.out.println("Congrates " + name + " you won");
+	else
+		System.out.println("Congrates " + name2 + " you won");
+	
+    }
+  }
 }
