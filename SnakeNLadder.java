@@ -12,9 +12,7 @@ public class SnakeNLadder {
 	
 public static void main(String args[]) {
 		
-		
 		System.out.println("Snake And Ladder Simulator");
-		
 		byte player = 1;
 //UC1
 		System.out.println("Game Starts...");
@@ -47,7 +45,6 @@ public static void main(String args[]) {
 	    sc.close();
 	}
 
-	
 	void diceRolled() {
 		    positionUC2 = positionUC1 + positionUC2;
 			System.out.println("Die Rolls, Position : On Square[" + positionUC2 + "]");
@@ -99,7 +96,6 @@ public static void main(String args[]) {
 	 while(positionUC6 <= 100) {
 		 
 		 positionUC6 = positionUC6 + positionUC6;  
-//		 System.out.println("Position : On Square [" + positionUC6 + "]");
 		 count++;
 	      }
 	 System.out.println("Dice thrown " + (count+1) + " numbers of time to reach 100");
@@ -116,10 +112,6 @@ static void playerOne(){
 		{
 			positionUC7 = positionUC7 + newposition;
 		}
-		
-		// System.out.println("Position : On Square [" + positionUC7 + "]");
-//		if(positionUC7 >= 100)
-//			System.out.println(name + " won");
 	}
 	
 	String name2 = player2name;
@@ -131,13 +123,12 @@ static void playerOne(){
 		{
 			positionUC8 = positionUC8 + newposition;
 		}
-		
-		// System.out.println("Position : On Square [" + positionUC8 + "]");	
 	}
 	if(positionUC7 > positionUC8)
 		System.out.println("Congrates " + name + " you won");
 	else
 		System.out.println("Congrates " + name2 + " you won");
 	
+    }
   }
 }
